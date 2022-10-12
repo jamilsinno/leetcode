@@ -11,10 +11,11 @@ var twoSum = function(nums, target) {
     // loop through the array and determine if the difference shows up in the hashmap
     for (element in nums) {
         let otherNum = target - nums[element]
-        if(otherNum in hashmap){
-            return [nums.indexOf(otherNum), +element]
-        }
+        console.log(nums[element])
         // set each element in the array to its index
+        if(otherNum in hashmap){
+            return [+hashmap[otherNum], +element]
+        }
         hashmap[nums[element]] = element
     }
 
