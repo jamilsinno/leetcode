@@ -21,47 +21,51 @@
 
 var romanToInt = function(s) {
     // declare a variable to hold the total
-    let sum = 0
+    // let sum = 0
     // take string and separate the elements
     let newS = s.split('')
     // go through each element and replace it with a value
-    for (let i = 0; i <newS.length; i++) {
-        if (newS[i] === "C" && newS[i+1] === "M") { sum += 900}
-        else if (newS[i] === "C" && newS[i+1] === "D") {sum += 400}
-        else if (newS[i] === "X" && newS[i+1] === "C") {sum += 90}
-        else if (newS[i] === "X" && newS[i+1] === "L") {sum += 40}
-        else if (newS[i] === "I" && newS[i+1] === "X") {sum += 9}
-        else if (newS[i] === "I" && newS[i+1] === "V") {sum += 4}
-        else if (newS[i] === "M" && newS[i-1] !== "C") {sum += 1000}
-        else if (newS[i] === "D" && newS[i-1] !== "C") {sum += 500}
-        else if (newS[i] === "C" && newS[i-1] !== "X") {sum += 100}
-        else if (newS[i] === "L" && newS[i-1] !== "X") {sum += 50}
-        else if (newS[i] === "X" && newS[i-1] !== "I") {sum += 10}
-        else if (newS[i] === "V" && newS[i-1] !== "I") {sum += 5}
-        else if (newS[i] === "I") {sum++}
-        console.log(i)
-        console.log(sum)
-    }
+    // for (let i = 0; i <newS.length; i++) {
+    //     if (newS[i] === "C" && newS[i+1] === "M") { sum += 900}
+    //     else if (newS[i] === "C" && newS[i+1] === "D") {sum += 400}
+    //     else if (newS[i] === "X" && newS[i+1] === "C") {sum += 90}
+    //     else if (newS[i] === "X" && newS[i+1] === "L") {sum += 40}
+    //     else if (newS[i] === "I" && newS[i+1] === "X") {sum += 9}
+    //     else if (newS[i] === "I" && newS[i+1] === "V") {sum += 4}
+    //     else if (newS[i] === "M" && newS[i-1] !== "C") {sum += 1000}
+    //     else if (newS[i] === "D" && newS[i-1] !== "C") {sum += 500}
+    //     else if (newS[i] === "C" && newS[i-1] !== "X") {sum += 100}
+    //     else if (newS[i] === "L" && newS[i-1] !== "X") {sum += 50}
+    //     else if (newS[i] === "X" && newS[i-1] !== "I") {sum += 10}
+    //     else if (newS[i] === "V" && newS[i-1] !== "I") {sum += 5}
+    //     else if (newS[i] === "I") {sum++}
+    //     console.log(i)
+    //     console.log(sum)
+    // }
     // // return the sum of all values 
-    return sum
+    // return sum
 
     //REFRACTOR IT
 
-    // return newS.reduce( (pv, cv, i, newS ) => {
-    //     if (newS[i] === "C" && newS[i+1] === "M") { cv += pv + 900}
-    //     else if (newS[i] === "C" && newS[i+1] === "D") {cv += pv + 400}
-    //     else if (newS[i] === "X" && newS[i+1] === "C") {cv += pv + 90}
-    //     else if (newS[i] === "X" && newS[i+1] === "L") {cv += pv + 40}
-    //     else if (newS[i] === "I" && newS[i+1] === "X") {cv += pv + 9}
-    //     else if (newS[i] === "I" && newS[i+1] === "V") {cv += pv + 4}
-    //     else if (newS[i] === "M" && newS[i-1] !== "C") {cv += pv + 1000}
-    //     else if (newS[i] === "D" && newS[i-1] !== "C") {cv += pv + 500}
-    //     else if (newS[i] === "C" && newS[i-1] !== "X") {cv += pv + 100}
-    //     else if (newS[i] === "L" && newS[i-1] !== "X") {cv += pv + 50}
-    //     else if (newS[i] === "X" && newS[i-1] !== "I") {cv += pv + 10}
-    //     else if (newS[i] === "V" && newS[i-1] !== "I") {cv += pv + 5}
-    //     else if (newS[i] === "I") {cv += pv++}
-    // }  , 0 )
+    let result = newS.reduce( (pv, cv, i, newS ) => {
+        if (newS[i] === "C" && newS[i+1] === "M") { cv = pv + 900}
+        else if (newS[i] === "C" && newS[i+1] === "D") {cv = pv + 400}
+        else if (newS[i] === "X" && newS[i+1] === "C") {cv = pv + 90}
+        else if (newS[i] === "X" && newS[i+1] === "L") {cv = pv + 40}
+        else if (newS[i] === "I" && newS[i+1] === "X") {cv = pv + 9}
+        else if (newS[i] === "I" && newS[i+1] === "V") {cv = pv + 4}
+        else if (newS[i] === "M" && newS[i-1] !== "C") {cv = pv + 1000}
+        else if (newS[i] === "D" && newS[i-1] !== "C") {cv = pv + 500}
+        else if (newS[i] === "C" && newS[i-1] !== "X") {cv = pv + 100}
+        else if (newS[i] === "L" && newS[i-1] !== "X") {cv = pv + 50}
+        else if (newS[i] === "X" && newS[i-1] !== "I") {cv = pv + 10}
+        else if (newS[i] === "V" && newS[i-1] !== "I") {cv = pv + 5}
+        else if (newS[i] === "I") {cv = pv + 1}
+        else {cv = pv + 0}
+        console.log(cv, pv)
+        return cv} , 0 )
+
+    return result
 };
 
 // console.log(romanToInt("III"), 3)
