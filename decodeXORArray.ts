@@ -5,5 +5,5 @@ function decode(encoded: number[], first: number): number[] {
         ans.push(ans[i] ^ encoded[i])
     }
     
-    return ans
+    return ans;
 };
