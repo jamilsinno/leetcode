@@ -1,10 +1,11 @@
-// We are being an array of numbers. The array will not contain any strings, nested arrays or objects.
+// We are going to be passed an array of numbers. The array numbers will be in random order. The array will only contain numbers. So we won't have to worry about any words being written out, nested arrays or objects.
 
-// return the value of the maximum difference from any 4 numbers in the array.
+// We need to return the product of the difference of the largest two numbers in the array minus -1 (each).
 
-function maxProductDifference(nums: number[]): number {
-    // sort our array in ascending order
-    let newNum: number[] = nums.sort( (a,b) => a-b )
-    // console.log(newNum[newNum.length - 1], newNum[newNum.length - 2], newNum[0], newNum[1])
-    return (newNum[newNum.length - 1] * newNum[newNum.length - 2]) - (newNum[1] * newNum[0])
+function maxProduct(nums: number[]): number {
+    // Sort the array using a descending order
+    let arr: number[] = nums.sort( (a,b) => b - a )
+
+    // return the product of the first two elements with 1 subtracted from them
+    return (arr[0] - 1) * ( arr[1] - 1 ) 
 };
