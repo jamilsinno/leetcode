@@ -2,7 +2,7 @@ function halvesAreAlike(s: string): boolean {
     let countR: number = 0;
     let countL: number = 0;
     let right: number = 0;
-    let left: number = s.length - 1
+    const left: number = s.length - 1
     const vowels = 'aeiou'.split('')
 
     while (right < left){
