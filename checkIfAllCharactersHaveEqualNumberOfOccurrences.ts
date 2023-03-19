@@ -1,5 +1,6 @@
 function areOccurrencesEqual(s: string): boolean {
     let hash = new Map();
+    let temp = null;
 
     for (let i of s) {
         if (!hash.has(i)) {
@@ -7,8 +8,6 @@ function areOccurrencesEqual(s: string): boolean {
         }
         hash.set(i, hash[i]++)
     }
-
-    let temp = null;
 
     for (const [key, value] of hash) {
         temp === null ? temp = value : temp
