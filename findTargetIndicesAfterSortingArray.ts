@@ -1,5 +1,5 @@
 function targetIndices(nums: number[], target: number): number[] {
-    let list = [];
+    let list: number[] = [];
 
     nums.sort((a,b) => a -b);
 
