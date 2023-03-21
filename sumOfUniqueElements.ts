@@ -11,7 +11,7 @@ function sumOfUnique(nums: number[]): number {
 
     for (const [key, value] of hash) {
         if(hash[key] === 1) {
-            ans.push(key)
+            ans.push(key);
         }
     }
     
